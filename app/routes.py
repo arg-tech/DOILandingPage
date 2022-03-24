@@ -18,8 +18,6 @@ def amf_schemes():
         content = ff.read()
         
         print(content)
-    if request.method == 'GET':
-        content = "HELLO WORLD"
         
     return content
 
