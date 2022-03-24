@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+ noop:
+  container_name: noop
+  build: .
+  ports:
+  - "8000:5000"
