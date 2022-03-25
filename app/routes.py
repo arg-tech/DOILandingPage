@@ -4,13 +4,8 @@ import json
 
 
 
-@application.route('/')
-def index():
-    return redirect('/noop')
-
 @application.route('/noop', methods=['GET', 'POST'])
 def amf_schemes():
-    print('SERVICE CALLED')
     if request.method == 'POST':
         f = request.files['file']
         f.save(f.filename)
@@ -20,7 +15,4 @@ def amf_schemes():
         print(content)
         
     return content
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
  
