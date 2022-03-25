@@ -10,7 +10,7 @@ def amf_schemes():
         f = request.files['file']
         f.save(f.filename)
         ff = open(f.filename, 'r')
-        content = ff.read()
+        content = json.load(ff)
         
         print(content)
         
