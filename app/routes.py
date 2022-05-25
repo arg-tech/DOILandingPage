@@ -1,4 +1,4 @@
-from flask import redirect, request
+from flask import redirect, request, render_template
 from . import application
 import json
 
@@ -11,8 +11,9 @@ def amf_schemes():
         f.save(f.filename)
         ff = open(f.filename, 'r')
         content = json.load(ff)
+        return content
+    elif request.method == 'GET':
+        return render_template('index.html')
         
-        print(content)
-        
-    return content
+ 
  
